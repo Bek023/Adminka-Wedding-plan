@@ -1,0 +1,38 @@
+.inner_block {
+    position: relative;
+}
+
+.block {
+    width: 100vw;
+    height: 100vh;
+    /* position: absolute; */
+    background-image: url(../../assets/image/login_bg_pink.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+    filter: blur(10px);
+    -webkit-filter: blur(10px);
+}
+
+.form {
+    max-width: 600px;
+    padding: 2rem;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    display: flex;
+    flex-direction: column;
+    gap: 0.7rem;
+    align-items: center;
+    border-radius: 1rem;
+    background: rgb(246, 181, 192);
+    box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
+    z-index: 2;
+}
+.login_btn{
+    color: rgb(247, 143, 161);
+}
+/* .login_btn:hover{
+    color: black;
+    background-color: black;
+} */

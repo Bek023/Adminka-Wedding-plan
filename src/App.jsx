@@ -1,5 +1,6 @@
 import {ConfigProvider} from 'antd'
 import './App.css'
+import Login from './components/Login'
 
 function App() {
 
@@ -7,11 +8,11 @@ function App() {
     <>
       <ConfigProvider theme={{
         token: {
-          colorPrimary: '#FF99A3',
+          colorPrimary: '#ffffff',
           colorInfo: "och pushti"
         }
       }}>
-
+        <Login/>
       </ConfigProvider>
     </>
   )
