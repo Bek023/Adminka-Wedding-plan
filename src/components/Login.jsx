@@ -18,10 +18,20 @@ const Login = ({ }) => {
         setClientReady(true);
         inputRefUsername.current.input.focus();
     }, []);
+    // Cookies token
+    function setCookie(name, value, minutes) {
+        const d = new Date();
+        d.setTime(d.getTime() + (minutes * 60 * 1000));
+        const expires = "expires=" + d.toUTCString();
+        document.cookie = name + "=" + value + ";" + expires;
+    }
+
+
+
     // Username and Password checker
     function checkAdmin() {
         if (inputRefUsername.current.input.value == data.userName && inputRefPassword.current.input.value == data.password) {
-            localStorage.setItem("token", 1);
+            setCookie("WeddingPlanAdminToken", 1, 30);
             message.success("Muaffiqayatli");
             navigate("/admin");
         } else {

@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react';
+
 import { ConfigProvider } from 'antd'
 import { Routes, Route } from 'react-router-dom';
 import './App.css'
@@ -7,11 +7,6 @@ import Private_routes from './components/Private_routes';
 import Home from './Page/Home';
 
 function App() {
-  const user = localStorage.getItem("token");
-  // const [user, setUser] = useState(null);
-  useEffect(() => {
-    console.log(user);
-  }, [user]);
   return (
     <>
       <ConfigProvider theme={{
@@ -21,12 +16,19 @@ function App() {
         }
       }}>
         <Routes>
+          <Route path='/' element={<Home />} />
+          <Route element={<Login />} path="/login" />
           <Route path='/admin' element={
             <Private_routes >
-              <Home />
+              <h1>ADMIN</h1>
             </Private_routes>}>
           </Route>
-          <Route element={<Login />} path="/admin/login" />
+          <Route path='/user' element={
+            <Private_routes >
+              <h1>USER</h1>
+            </Private_routes>}>
+          </Route>
+
         </Routes>
       </ConfigProvider>
     </>
